@@ -1,0 +1,28 @@
+#rickmorty-app {
+  --dark: #000;
+  --light: #fff;
+  --border-color: #c8c8c8;
+  --bg: var(--light);
+  --color: var(--dark);
+  --primary: #97cbfb;
+  --secondary: #b963c9;
+  --gray-100: #e3dede;
+  --gray-200: #bbb;
+  --gray-300: #aaa;
+  --blue-100: #a9f3fd;
+  --blue-200: #87d1db;
+  --blue-300: #4cb5c3;
+  --blue-400: #02afc5;
+  --blue-500: #35c9dd;
+  &.dark {
+    --border-color: #c8c8c8;
+    --bg: var(--light);
+    --color: var(--dark);
+    --blue-100: #02afc5;
+    --blue-200: #35c9dd;
+    --blue-300: #4cb5c3;
+    --blue-400: #87d1db;
+    --blue-500: #a9f3fd;
+  }
+}
+
