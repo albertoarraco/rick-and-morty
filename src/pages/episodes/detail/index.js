@@ -36,9 +36,11 @@ const DetailEpisode = ({episode}) => {
 					<h1>{code} - {name}</h1>
 				</div>
 				<div className={'episode-info'}>
-					<Link to={'/episodes'}>
-						Go back
-					</Link>
+					<div className={'breadcrumbs'}>
+						<Link to={'/episodes'}>
+							Episodes
+						</Link> > <b>{code} - {name}</b>
+					</div>
 					<p><b>Air date: {air_date}</b></p>
 				</div>
 				<div className={'characters-carousel'}>

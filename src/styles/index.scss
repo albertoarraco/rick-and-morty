@@ -19,14 +19,27 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: var(--blue-100);
+    background-color: var(--shirt);
     z-index: 999;
     @media(max-width: vars.$screen-sm) {
       padding: 10px;
     }
     img {
-      background-color: var(--blue-100);
       border-radius: 10px;
+      background-color: var(--blue-500);
+    }
+    .menu-action {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      background-color: rgba(0,0,0,0);
+      @include mixins.resetBtn;
+      span {
+        width: 30px;
+        height: 3px;
+        border-radius: 10px;
+        background-color: var(--dark);
+      }
     }
     .menu {
       display: none;
@@ -38,7 +51,7 @@ body {
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      background-color: var(--bg);
+      background-color: var(--shirt);
       ul {
         margin: 0 0 40px;
         padding: 0 0 40px;
@@ -47,10 +60,10 @@ body {
         justify-content: center;
         flex-direction: column;
         gap: 20px;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--dark);
       }
       .link {
-        color: var(--color);
+        color: var(--dark);
         font-size: 52px;
         text-align: center;
         text-decoration: none;
@@ -59,7 +72,7 @@ body {
           font-size: 36px;
         }
         &:hover {
-          color: var(--secondary);
+          color: var(--brown);
         }
       }
       button {
@@ -75,19 +88,21 @@ body {
     .episode-detail {
       display: flex;
       flex-direction: column;
-      background-color: var(--dark);
-      color: var(--light);
+      background-color: var(--light);
+      color: var(--dark);
       .episode-header {
         height: 400px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: var(--dark);
         background-size: auto 400px;
         background-repeat: no-repeat;
         background-position: top center;
         background-image: url('https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/12/21/rick-y-morty-temporada-7-episodio-10.jpeg');
         h1 {
+          color: #fff;
           padding: 20px 30px;
           background-color: rgba(0,0,0,.7);
         }
@@ -150,8 +165,8 @@ body {
               font-weight: 600;
               line-height: 12px;
               text-transform: uppercase;
-              color: var(--light);
-              background-color: var(--secondary);
+              color: var(--dark);
+              background-color: var(--shirt);
             }
           }
           /*img {
@@ -162,9 +177,10 @@ body {
     }
   }
   footer {
-    background-color: var(--blue-200);
+    height: 40vh;
     padding: 60px;
     text-align: center;
-    height: 40vh;
+    color: var(--light);
+    background-color: var(--brown);
   }
 }

@@ -12,7 +12,9 @@ const Menu = () => {
 	return (
 		<>
 			<button className={'menu-action'} onClick={() => setVisible(true)}>
-				Open menu
+				<span />
+				<span />
+				<span />
 			</button>
 			<div className={`menu ${visible ? 'visible' : ''}`}>
 				<ul>
