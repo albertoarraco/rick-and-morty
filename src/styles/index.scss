@@ -7,6 +7,9 @@ body {
 }
 
 #rickmorty-app {
+  * {
+    font-family: "Roboto", serif;
+  }
   header {
     position: sticky;
     top: 0;
@@ -72,6 +75,23 @@ body {
     .episode-detail {
       display: flex;
       flex-direction: column;
+      background-color: var(--dark);
+      color: var(--light);
+      .episode-header {
+        height: 400px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-size: auto 400px;
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-image: url('https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/12/21/rick-y-morty-temporada-7-episodio-10.jpeg');
+        h1 {
+          padding: 20px 30px;
+          background-color: rgba(0,0,0,.7);
+        }
+      }
       .characters-carousel {
         overflow: hidden;
         .characters-list {
@@ -102,7 +122,7 @@ body {
               background-size: 250px;
               cursor: pointer;
               &:before {
-                background-color: rgba(0,0,0,.2);
+                background-color: rgba(0,0,0,.3);
               }
             }
             &:before {
@@ -116,7 +136,7 @@ body {
               transition: all 300ms ease-out;
             }
             p {
-              margin: 10px 0 0;
+              margin: 5px 0 0;
               font-size: 20px;
               font-weight: 600;
               color: var(--light);
@@ -124,9 +144,13 @@ body {
             }
             .tag-status {
               z-index: 2;
-              padding: 2px 5px;
+              padding: 5px;
               border-radius: 5px;
+              font-size: 12px;
               font-weight: 600;
+              line-height: 12px;
+              text-transform: uppercase;
+              color: var(--light);
               background-color: var(--secondary);
             }
           }
@@ -141,5 +165,6 @@ body {
     background-color: var(--blue-200);
     padding: 60px;
     text-align: center;
+    height: 40vh;
   }
 }
