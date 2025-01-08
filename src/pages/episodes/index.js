@@ -4,6 +4,7 @@ import {getEpisodeById, getEpisodes} from "../../reducers/episodes";
 import {shallowEqual, useDispatch, useSelector} from "react-redux";
 import ListComponent from "../../components/list";
 import {persistor} from "../../store/configureStore";
+import DetailEpisode from "./detail";
 
 const EpisodesPage = () => {
 	const dispatch = useDispatch();
@@ -18,16 +19,8 @@ const EpisodesPage = () => {
 		}
 	}, [id])
 
-	if(id && detail?.id) {
-		const {data, loading, refreshing, error} = detail?.[id];
-		if(loading || refreshing) {
-			return <h1>Loading episode...</h1>
-		}
-		const {air_date, name, episode, characters} = data;
-		return <div>
-			<h1>{name}</h1>
-			<p><b>Air date: {air_date}</b></p>
-		</div>
+	if(id) {
+		return <DetailEpisode episode={id} />
 	}
 
 	return <ListComponent type={'episodes'} {...list} />
