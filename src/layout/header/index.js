@@ -1,6 +1,6 @@
 import React from 'react';
 import Menu from "./menu";
-import Search from "./search";
+import Search from "./theme";
 import {Link} from "react-router-dom";
 
 const Header = () => {

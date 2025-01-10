@@ -3,9 +3,8 @@ import {HashRouter, Route, Routes} from "react-router-dom";
 import HomePage from "./pages/home";
 import NotFoundPage from "./pages/not-found";
 import Wrapper from "./hoc/wrapper";
+import PlaceholderItemList from "./components/placeholder";
 const EpisodesPage = lazy(() => import('./pages/episodes'));
-const CharactersPage = lazy(() => import('./pages/characters'));
-const LocationsPage = lazy(() => import('./pages/locations'));
 
 const Router = () => {
 	return (
@@ -19,22 +18,8 @@ const Router = () => {
 					}/>
 					<Route path={'/episodes/:id?'} element={
 						<Wrapper>
-							<Suspense fallback={<h1>Loading...</h1>}>
+							<Suspense fallback={<PlaceholderItemList />}>
 									<EpisodesPage />
-							</Suspense>
-						</Wrapper>
-					} />
-					<Route path={'/characters/:id?'} element={
-						<Wrapper>
-							<Suspense fallback={<h1>Loading...</h1>}>
-								<CharactersPage />
-							</Suspense>
-						</Wrapper>
-					} />
-					<Route path={'/locations/:id?'} element={
-						<Wrapper>
-							<Suspense fallback={<h1>Loading...</h1>}>
-								<LocationsPage />
 							</Suspense>
 						</Wrapper>
 					} />

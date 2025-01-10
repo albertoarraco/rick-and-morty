@@ -2,7 +2,8 @@ import React, {useEffect} from 'react';
 import {shallowEqual, useDispatch, useSelector} from "react-redux";
 import {getEpisodeById} from "../../../reducers/episodes";
 import {Link} from "react-router-dom";
-import Character from "../../characters/detail";
+import Character from "../../../components/characters/detail";
+import {IMAGES_EPISODE} from "../../../utils/constants";
 
 const DetailEpisode = ({episode}) => {
 	const dispatch = useDispatch();
@@ -12,9 +13,7 @@ const DetailEpisode = ({episode}) => {
 	)
 
 	useEffect(() => {
-		if(!detail?.loading) {
-			dispatch(getEpisodeById(episode));
-		}
+		dispatch(getEpisodeById(episode));
 	}, [])
 
 	const renderCharacters = characters => (
@@ -25,31 +24,40 @@ const DetailEpisode = ({episode}) => {
 
 	if(detail) {
 		const {data, loading, refreshing, error} = detail;
-		if(loading || refreshing) {
+		if(loading) {
 			return <h1>Loading episode...</h1>
 		}
+		if(loading) {
+			return <h1>Refresh episode...</h1>
+		}
+		if(error) {
+			return <p style={{color: '#f00'}}>{error}</p>;
+		}
 
-		const {air_date, episode: code, name, characters} = data;
+		const {id, air_date, episode: code, name, characters} = data;
 		return (
-			<div className="episode-detail">
-				<div className={'episode-header'}>
-					<h1>{code} - {name}</h1>
-				</div>
-				<div className={'episode-info'}>
-					<div className={'breadcrumbs'}>
-						<Link to={'/episodes'}>
-							Episodes
-						</Link> > <b>{code} - {name}</b>
+			<>
+				<div className="episode-detail appear">
+					<div className={'episode-header appear'}
+					     style={{'--bg-image': `url(${IMAGES_EPISODE[id - 1]})`}}>
+						<h1>{code} - {name}</h1>
 					</div>
-					<p><b>Air date: {air_date}</b></p>
+					<div className={'episode-info'}>
+						<div className={'breadcrumbs'}>
+							<Link to={'/episodes'}>
+								Episodes
+							</Link> | <b>{code} - {name}</b>
+						</div>
+						<p><b>Air date: {air_date}</b></p>
+					</div>
 				</div>
 				<div className={'characters-carousel'}>
-					<h3>Characters:</h3>
+					<h3>Characters</h3>
 					<ul className={'characters-list'}>
 						{renderCharacters(characters)}
 					</ul>
 				</div>
-			</div>
+			</>
 		)
 	}
 }

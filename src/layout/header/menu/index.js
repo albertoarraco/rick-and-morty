@@ -19,8 +19,8 @@ const Menu = () => {
 			<div className={`menu ${visible ? 'visible' : ''}`}>
 				<ul>
 					<NavLink to={'/episodes'} className={'link'}>Episodes</NavLink>
-					<NavLink to={'/characters'} className={'link'}>Characters</NavLink>
-					<NavLink to={'/locations'} className={'link'}>Locations</NavLink>
+					<p className={'link'}>Characters</p>
+					<p className={'link'}>Locations</p>
 				</ul>
 				<button className={'link'} onClick={() => setVisible(false)}>
 					Close

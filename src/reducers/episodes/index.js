@@ -53,12 +53,11 @@ const episodesSlice = createSlice({
 				}
 			))
 			.addCase(getEpisodeById.pending, (state, action) => {
-				console.log(action)
 				const id = action.meta.arg;
 				state.detail = {
 					...state.detail,
 					[id]: {
-						...state?.detail[id],
+						...state?.detail?.[id],
 						loading: !state.detail[id]?.data,
 						refreshing: !!state.detail[id]?.data,
 						error: null,
@@ -81,7 +80,7 @@ const episodesSlice = createSlice({
 				state.detail = {
 					...state.detail,
 					[id]: {
-						...state?.detail[id],
+						...state?.detail?.[id],
 						loading: false,
 						refreshing: false,
 						error: action.error.message
