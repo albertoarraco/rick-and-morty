@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -c ./webpack/webpack.config.dev.js --open --progress --hot --mode development",
-    "build": "webpack -c ./webpack/webpack.config.beta.js --mode production"
+    "build": "webpack -c ./webpack/webpack.config.prod.js --mode production"
   },
   "repository": {
     "type": "git",
