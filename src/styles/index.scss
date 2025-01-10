@@ -401,13 +401,18 @@ body {
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        min-height: 800px;
+        min-height: 50vh;
         lottie-player {
-          height: 600px;
+          height: 400px;
+
         }
         img {
           height: 300px;
           animation: beat 1s infinite ease-in-out;
+        }
+        .loading-episodes h3 {
+          margin-top: -100px;
+          margin-bottom: 60px;
         }
         h3 {
           font-size: 32px;
