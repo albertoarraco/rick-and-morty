@@ -5,6 +5,8 @@ import {Link} from "react-router-dom";
 import Character from "../../../components/characters/detail";
 import {IMAGES_EPISODE} from "../../../utils/constants";
 import PlaceholderItemList from "../../../components/placeholder";
+import InputText from "../../../components/form/input";
+import Form from "./form";
 
 const DetailEpisode = ({episode}) => {
 	const dispatch = useDispatch();
@@ -55,6 +57,7 @@ const DetailEpisode = ({episode}) => {
 						{renderCharacters(characters)}
 					</ul>
 				</div>
+				<Form />
 			</>
 		)
 	}
