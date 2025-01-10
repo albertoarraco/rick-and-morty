@@ -1,5 +1,3 @@
-Aquí tienes un archivo README.md generado para tu proyecto basado en la información que me proporcionaste:
-
 # Rick & Morty Application
 
 A Rick & Morty application built with modern web development technologies such as React, Redux, and Webpack. This project provides an engaging interface to explore the world of Rick and Morty.
