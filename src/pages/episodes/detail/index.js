@@ -4,6 +4,7 @@ import {getEpisodeById} from "../../../reducers/episodes";
 import {Link} from "react-router-dom";
 import Character from "../../../components/characters/detail";
 import {IMAGES_EPISODE} from "../../../utils/constants";
+import PlaceholderItemList from "../../../components/placeholder";
 
 const DetailEpisode = ({episode}) => {
 	const dispatch = useDispatch();
@@ -24,11 +25,8 @@ const DetailEpisode = ({episode}) => {
 
 	if(detail) {
 		const {data, loading, refreshing, error} = detail;
-		if(loading) {
-			return <h1>Loading episode...</h1>
-		}
-		if(loading) {
-			return <h1>Refresh episode...</h1>
+		if(loading || refreshing) {
+			return <PlaceholderItemList />
 		}
 		if(error) {
 			return <p style={{color: '#f00'}}>{error}</p>;
