@@ -147,7 +147,7 @@ body {
           justify-content: center;
           flex-direction: column;
           background-image: var(--bg-image);
-          background-size: auto 100%;
+          background-size: auto 110%;
           background-position: center;
           background-repeat: no-repeat;
           border-radius: 10px;
@@ -160,7 +160,7 @@ body {
           @media(max-width: vars.$screen-md) {
             width: 100%;
           }
-          &:hover {
+          &:not(.disabled-item):hover {
             @media(min-width: vars.$screen-md) {
               background-size: auto 400px;
               cursor: pointer;
@@ -179,7 +179,7 @@ body {
             bottom: 0;
             z-index: 0;
             border-radius: 10px;
-            background-color: rgba(var(--overlay),.7);
+            background-color: rgba(var(--overlay),.8);
             transition: all 600ms ease-out;
           }
           span {
@@ -470,6 +470,7 @@ body {
     background-color: #1C4274;
     animation: scaleAnimation 1s ease-in-out 500ms forwards;
     svg {
+      max-height: 500px;
       animation: appearIn 500ms ease-in-out;
     }
     h3 {

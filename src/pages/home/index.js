@@ -10,13 +10,13 @@ const NotFoundPage = () => (
 			</Link>
 		</div>
 		<div className={'link-wrapper'}>
-			<div className={'home-link'} style={{'--bg-image': 'url(https://preview.redd.it/nq7j6ngb4kn71.jpg?width=1080&crop=smart&auto=webp&s=cfd043648838495ab7058f91c50e558841d08bde)'}}>
+			<div className={'home-link  disabled-item'} style={{'--bg-image': 'url(https://preview.redd.it/nq7j6ngb4kn71.jpg?width=1080&crop=smart&auto=webp&s=cfd043648838495ab7058f91c50e558841d08bde)'}}>
 				<span>Characters</span>
 				<small>Work in progress</small>
 			</div>
 		</div>
 		<div className={'link-wrapper'}>
-			<div className={'home-link'}
+			<div className={'home-link disabled-item'}
 			   style={{'--bg-image': 'url(https://haztucuadro.com/cdn/shop/products/wallpaperbetter_98__pagina.jpg?v=1676744498)'}}>
 				<span>Locations</span>
 				<small>Work in progress</small>
